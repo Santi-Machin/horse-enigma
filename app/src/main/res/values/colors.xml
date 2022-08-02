@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default colors -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- App colors -->
+    <color name="app_color_light">#FAF8EF</color>
+    
+    <!-- Other colors -->
+    <color name="gold">#B19500</color>
+    <color name="cian">#00a3a3</color>
+    <color name="cell_white">#E8EDF9</color>
+    <color name="cell_black">#B7C0D8</color>
+    <color name="black_cell_premium">#769656</color>
+    <color name="white_cell_premium">#eeeed2</color>
+    <color name="previous_cell_premium">#baca44</color>
+    <color name="selected_cell_premium">#8CA0D3</color>
+    <color name="slateGray">#69738E</color>
+    <color name="blueCrayola">#2C65FE</color>
+    <color name="transparentCian">#DC39518C</color>
+    <color name="previous_cell">#8CA0D3</color>
+    <color name="selected_cell">#7B61FF</color>
+    <color name="red">#E91E63</color>
+</resources>

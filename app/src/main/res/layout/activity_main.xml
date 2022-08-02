@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_color_light"
+    tools:context=".MainActivity"
+    android:id="@+id/rlScreen">
+
+    <!-- Top label with premium access -->
+    <LinearLayout
+        android:id="@+id/lyPremium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/tvPremium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/premium"
+            android:fontFamily="@font/ubuntu_regular"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:padding="5dp"
+            android:onClick="launchPaymentCard"
+            android:layout_marginTop="10dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="10dp"
+            android:background="@drawable/bg_premium_label"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/svGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lyPremium"
+        android:paddingBottom="70dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:text="@string/level"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tvLevelNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:paddingEnd="5dp"
+                    android:text="1"
+                    android:textColor="@color/cian"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvMoves"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:text="@string/moves"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tvMovesNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="5dp"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:paddingEnd="3dp"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:text="@string/time"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tvTimeNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:paddingEnd="5dp"
+                    android:text="00:00"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvLives"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:text="@string/lives"
+                    android:textColor="@color/red"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/tvLiveData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="3dp"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:paddingEnd="3dp"
+                    android:text="0"
+                    android:textColor="@color/red"
+                    android:textSize="23sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvOptions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/ubuntu_light"
+                    android:text="@string/options"
+                    android:textColor="@color/black"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/tvOptionsData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="3dp"
+                    android:fontFamily="@font/ubuntu_light"
+                    android:paddingEnd="3dp"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/tvBonusData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/ubuntu_light"
+                    android:paddingEnd="5dp"
+                    android:text=""
+                    android:textColor="@color/cian"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TableLayout
+                    android:id="@+id/tlBoard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center">
+
+                    <View
+                        android:id="@+id/vSeparator0"
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:background="@color/slateGray"
+                        android:translationY="-5dp" />
+
+                    <TableRow android:weightSum="8">
+
+                        <ImageView
+                            android:id="@+id/c07"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="0"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c07" />
+
+                        <ImageView
+                            android:id="@+id/c17"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c17" />
+
+                        <ImageView
+                            android:id="@+id/c27"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c27" />
+
+                        <ImageView
+                            android:id="@+id/c37"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="3"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c37" />
+
+                        <ImageView
+                            android:id="@+id/c47"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="4"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c47" />
+
+                        <ImageView
+                            android:id="@+id/c57"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="5"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c57" />
+
+                        <ImageView
+                            android:id="@+id/c67"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="6"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c67" />
+
+                        <ImageView
+                            android:id="@+id/c77"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="7"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c77" />
+                    </TableRow>
+
+                    <TableRow android:weightSum="8">
+
+                        <ImageView
+                            android:id="@+id/c06"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="0"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c06" />
+
+                        <ImageView
+                            android:id="@+id/c16"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c16" />
+
+                        <ImageView
+                            android:id="@+id/c26"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c26" />
+
+                        <ImageView
+                            android:id="@+id/c36"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="3"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c36" />
+
+                        <ImageView
+                            android:id="@+id/c46"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="4"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c46" />
+
+                        <ImageView
+                            android:id="@+id/c56"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="5"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c56" />
+
+                        <ImageView
+                            android:id="@+id/c66"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="6"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c66" />
+
+                        <ImageView
+                            android:id="@+id/c76"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="7"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c76" />
+                    </TableRow>
+
+                    <TableRow android:weightSum="8">
+
+                        <ImageView
+                            android:id="@+id/c05"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="0"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c05" />
+
+                        <ImageView
+                            android:id="@+id/c15"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c15" />
+
+                        <ImageView
+                            android:id="@+id/c25"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c25" />
+
+                        <ImageView
+                            android:id="@+id/c35"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="3"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c35" />
+
+                        <ImageView
+                            android:id="@+id/c45"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="4"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c45" />
+
+                        <ImageView
+                            android:id="@+id/c55"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="5"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c55" />
+
+                        <ImageView
+                            android:id="@+id/c65"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="6"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c65" />
+
+                        <ImageView
+                            android:id="@+id/c75"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="7"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c75" />
+                    </TableRow>
+
+                    <TableRow android:weightSum="8">
+
+                        <ImageView
+                            android:id="@+id/c04"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="0"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c04" />
+
+                        <ImageView
+                            android:id="@+id/c14"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c14" />
+
+                        <ImageView
+                            android:id="@+id/c24"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c24" />
+
+                        <ImageView
+                            android:id="@+id/c34"
+                            android:layout_width="47dp"
+                            android:layout_height="50dp"
+                            android:layout_column="3"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c34" />
+
+                        <ImageView
+                            android:id="@+id/c44"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="4"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c44" />
+
+                        <ImageView
+                            android:id="@+id/c54"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="5"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c54" />
+
+                        <ImageView
+                            android:id="@+id/c64"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="6"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c64" />
+
+                        <ImageView
+                            android:id="@+id/c74"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="7"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c74" />
+                    </TableRow>
+
+                    <TableRow android:weightSum="8">
+
+                        <ImageView
+                            android:id="@+id/c03"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="0"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c03" />
+
+                        <ImageView
+                            android:id="@+id/c13"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c13" />
+
+                        <ImageView
+                            android:id="@+id/c23"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c23" />
+
+                        <ImageView
+                            android:id="@+id/c33"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="3"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c33" />
+
+                        <ImageView
+                            android:id="@+id/c43"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="4"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c43" />
+
+                        <ImageView
+                            android:id="@+id/c53"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="5"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c53" />
+
+                        <ImageView
+                            android:id="@+id/c63"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="6"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c63" />
+
+                        <ImageView
+                            android:id="@+id/c73"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="7"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c73" />
+                    </TableRow>
+
+                    <TableRow android:weightSum="8">
+
+                        <ImageView
+                            android:id="@+id/c02"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="0"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c02" />
+
+                        <ImageView
+                            android:id="@+id/c12"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c12" />
+
+                        <ImageView
+                            android:id="@+id/c22"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c22" />
+
+                        <ImageView
+                            android:id="@+id/c32"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="3"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c32" />
+
+                        <ImageView
+                            android:id="@+id/c42"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="4"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c42" />
+
+                        <ImageView
+                            android:id="@+id/c52"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="5"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c52" />
+
+                        <ImageView
+                            android:id="@+id/c62"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="6"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c62" />
+
+                        <ImageView
+                            android:id="@+id/c72"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="7"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c72" />
+                    </TableRow>
+
+                    <TableRow android:weightSum="8">
+
+                        <ImageView
+                            android:id="@+id/c01"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="0"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c01" />
+
+                        <ImageView
+                            android:id="@+id/c11"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c11" />
+
+                        <ImageView
+                            android:id="@+id/c21"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c21" />
+
+                        <ImageView
+                            android:id="@+id/c31"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="3"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c31" />
+
+                        <ImageView
+                            android:id="@+id/c41"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="4"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c41" />
+
+                        <ImageView
+                            android:id="@+id/c51"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="5"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c51" />
+
+                        <ImageView
+                            android:id="@+id/c61"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="6"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c61" />
+
+                        <ImageView
+                            android:id="@+id/c71"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="7"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c71" />
+                    </TableRow>
+
+                    <TableRow android:weightSum="8">
+
+                        <ImageView
+                            android:id="@+id/c00"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="0"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c00" />
+
+                        <ImageView
+                            android:id="@+id/c10"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c10" />
+
+                        <ImageView
+                            android:id="@+id/c20"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c20" />
+
+                        <ImageView
+                            android:id="@+id/c30"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="3"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c30" />
+
+                        <ImageView
+                            android:id="@+id/c40"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="4"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c40" />
+
+                        <ImageView
+                            android:id="@+id/c50"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="5"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c50" />
+
+                        <ImageView
+                            android:id="@+id/c60"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="6"
+                            android:layout_weight="1"
+                            android:background="@color/cell_black"
+                            android:onClick="checkCellClicked"
+                            android:tag="c60" />
+
+                        <ImageView
+                            android:id="@+id/c70"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_column="7"
+                            android:layout_weight="1"
+                            android:background="@color/cell_white"
+                            android:onClick="checkCellClicked"
+                            android:tag="c70" />
+                    </TableRow>
+
+                    <View
+                        android:id="@+id/vSeparator1"
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:background="@color/slateGray"
+                        android:translationY="5dp" />
+
+                </TableLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/transparentCian"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tvTitleMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:shadowColor="@color/black"
+                        android:shadowRadius="8"
+                        android:text="Nivel: 1"
+                        android:textColor="@color/white"
+                        android:textSize="70sp" />
+
+                    <TextView
+                        android:id="@+id/tvScoreMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/ubuntu_regular"
+                        android:shadowColor="@color/black"
+                        android:shadowRadius="8"
+                        android:text="Vidas: 1"
+                        android:textColor="@color/white"
+                        android:textSize="45sp" />
+
+                    <TextView
+                        android:id="@+id/tvAction"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:onClick="launchAction"
+                        android:text="Siguiente nivel"
+                        android:textAlignment="center"
+                        android:textColor="@color/app_color_light"
+                        android:textSize="25sp" />
+
+                    <ImageButton
+                        android:id="@+id/ibtShare"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginBottom="40dp"
+                        android:background="@drawable/bg_share"
+                        android:onClick="launchShareGame"
+                        android:src="@drawable/ic_share"
+                        android:visibility="visible" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/lyAdsBanner"
+        android:orientation="vertical"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </LinearLayout>
+</RelativeLayout>

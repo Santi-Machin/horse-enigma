@@ -1,0 +1,20 @@
+<resources>
+    <!-- Default -->
+    <string name="app_name">Horse enigma</string>
+
+    <!-- Game strings -->
+    <string name="level">Nivel:</string>
+    <string name="moves">Movimientos:</string>
+    <string name="time">Tiempo:</string>
+    <string name="options">Opciones:</string>
+    <string name="lives">Vidas:</string>
+
+    <!-- Premium strings -->
+    <string name="premium">♟ Premium</string>
+    <string name="premiumTitle">Obten acceso premium de por vida</string>
+    <string name="premiumBenefit1">Sin mas anuncios</string>
+    <string name="premiumBenefit2">Niveles ilimitados</string>
+    <string name="premiumBenefit3">Guarda tu nivel</string>
+    <string name="pay">Paga solo $1</string>
+
+</resources>
